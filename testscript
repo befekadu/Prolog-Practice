@@ -1,0 +1,125 @@
+Script started on Thu 22 Oct 2015 02:11:12 PM EDT
+(student)~/3490/oct19% gprolog
+GNU Prolog 1.4.0
+By Daniel Diaz
+Copyright (C) 1999-2011 Daniel Diaz
+| ?- [oct19].
+compiling /u/css/befekadunb/3490/oct19/oct19.pl for byte code...
+/u/css/befekadunb/3490/oct19/oct19.pl:12: warning: singleton variables [A,As,Small,Large] for partition/4
+/u/css/befekadunb/3490/oct19/oct19.pl:15: warning: singleton variables [Z] for partition/4
+/u/css/befekadunb/3490/oct19/oct19.pl compiled, 61 lines read - 6313 bytes written, 50 ms
+
+(5 ms) yes
+| ?- separate([a,b,c,d,e,f],X, Y).
+
+X = [a,c,e]
+Y = [b,d,f]
+
+yes
+| ?- partition([1,2,3,4,5],3,[1,2,3],[4,5]).
+
+true ? 
+
+yes
+| ?- partition([1,2,1,3,1,4,1,5],3,[1,2,1,3,1,1],[4,5]).
+
+true ? 
+
+(1 ms) yes
+| ?- partition([1,2,3,4,5],6,[1,2,3,4,5],[]).
+
+true ? 
+
+yes
+| ?- quicksort([3,4,2], [2,3,4]).
+
+true ?
+
+yes
+| ?- mini([1,2,3,2,1],1).
+
+true ? 
+
+yes
+| ?- mini([2,1,3],X).
+
+X = 1 ? 
+
+yes
+| ?- rev([a,b,c,d,e],X).
+
+X = [e,d,c,b,a]
+
+yes
+| ?- rev([a,b,c,d,e],[e,d,c,b,a]).
+
+yes
+| ?- trace.
+The debugger will first creep -- showing everything (trace)
+
+yes
+{trace}
+| ?- rev([a,b,c,d,e],X).
+      1    1  Call: rev([a,b,c,d,e],_27) ?
+      2    2  Call: rev([b,c,d,e],_96) ?
+      3    3  Call: rev([c,d,e],_120) ?
+      4    4  Call: rev([d,e],_144) ?
+      5    5  Call: rev([e],_168) ?
+      6    6  Call: rev([],_192) ?
+      6    6  Exit: rev([],[]) ?
+      7    6  Call: app([],[e],_220) ?
+      7    6  Exit: app([],[e],[e]) ?
+      5    5  Exit: rev([e],[e]) ?
+      8    5  Call: app([e],[d],_251) ?
+      9    6  Call: app([],[d],_238) ?
+      9    6  Exit: app([],[d],[d]) ?
+      8    5  Exit: app([e],[d],[e,d]) ?
+      4    4  Exit: rev([d,e],[e,d]) ?
+     10    4  Call: app([e,d],[c],_310) ?
+     11    5  Call: app([d],[c],_297) ?
+     12    6  Call: app([],[c],_324) ?
+     12    6  Exit: app([],[c],[c]) ?
+     11    5  Exit: app([d],[c],[d,c]) ?
+     10    4  Exit: app([e,d],[c],[e,d,c]) ?
+      3    3  Exit: rev([c,d,e],[e,d,c]) ?
+     13    3  Call: app([e,d,c],[b],_397) ?
+     14    4  Call: app([d,c],[b],_384) ?
+     15    5  Call: app([c],[b],_411) ?
+     16    6  Call: app([],[b],_438) ?
+     16    6  Exit: app([],[b],[b]) ?
+     15    5  Exit: app([c],[b],[c,b]) ?
+     14    4  Exit: app([d,c],[b],[d,c,b]) ?
+     13    3  Exit: app([e,d,c],[b],[e,d,c,b]) ?
+      2    2  Exit: rev([b,c,d,e],[e,d,c,b]) ?
+     17    2  Call: app([e,d,c,b],[a],_27) ?
+     18    3  Call: app([d,c,b],[a],_499) ?
+     19    4  Call: app([c,b],[a],_526) ?
+     20    5  Call: app([b],[a],_553) ?
+     21    6  Call: app([],[a],_580) ?
+     21    6  Exit: app([],[a],[a]) ?
+     20    5  Exit: app([b],[a],[b,a]) ?
+     19    4  Exit: app([c,b],[a],[c,b,a]) ?
+     18    3  Exit: app([d,c,b],[a],[d,c,b,a]) ?
+     17    2  Exit: app([e,d,c,b],[a],[e,d,c,b,a]) ?
+      1    1  Exit: rev([a,b,c,d,e],[e,d,c,b,a]) ?
+
+X = [e,d,c,b,a]
+
+(12 ms) yes
+{trace}
+| ?- insert(3,[1,2,4],[1,2,3,4]).
+
+true ? 
+
+yes
+| ?- insertionSort([3,5,2,4,1], L).
+
+L = [1,2,3,4,5] ? 
+
+(1 ms) yes
+| ?- 
+
+(student)~/3490/oct19% exit
+exit
+
+Script done on Thu 22 Oct 2015 02:13:21 PM EDT
